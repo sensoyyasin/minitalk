@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 12:16:45 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/04/20 15:31:59 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/04/20 14:45:12 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/04/20 15:30:36 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 void	sig_usr(int sig)
 {
-	static char	str;
-	static int	i;
+	static unsigned char	str;
+	static int				i;
 
 	if (sig == SIGUSR1)
 		str = str | 1;
+	str = (str | (sig - SIGUSR1));
 	i++;
 	if (i == 8)
 	{

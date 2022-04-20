@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 12:11:14 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/04/20 15:33:27 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/04/20 14:43:10 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/04/20 15:19:44 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
-void	getbit(int pid, char *str)
+void	getbit(int pid, unsigned char *str)
 {
-	int		i;
-	char	c;
+	int				i;
+	unsigned char	c;
 
 	while (*str)
 	{
@@ -27,7 +27,7 @@ void	getbit(int pid, char *str)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
-			usleep(100);
+			sleep(1);
 		}
 	}
 }
@@ -35,6 +35,6 @@ void	getbit(int pid, char *str)
 int	main(int argc, char **argv)
 {
 	if (argc > 2)
-		getbit(ft_atoi(argv[1]), argv[2]);
+		getbit(ft_atoi(argv[1]), (unsigned char *)argv[2]);
 	return (0);
 }
