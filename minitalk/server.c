@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 12:16:45 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/04/20 15:31:59 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/04/23 13:47:57 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sig_usr(int sig)
 	static char	str;
 	static int	i;
 
-	if (sig == SIGUSR1)
+	if (sig == 30)
 		str = str | 1;
 	i++;
 	if (i == 8)

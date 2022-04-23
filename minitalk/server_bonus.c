@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:45:12 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/04/20 15:30:36 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/04/22 15:19:05 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	sig_usr(int sig)
 
 	if (sig == SIGUSR1)
 		str = str | 1;
-	str = (str | (sig - SIGUSR1));
 	i++;
 	if (i == 8)
 	{
